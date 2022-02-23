@@ -71,6 +71,8 @@ function showNotes() {
         notesElem.innerHTML = "You dont have any notes..please add a note.."
     }
 
+
+    // searching
     let searchTxt = document.getElementById("searchTxt");
     searchTxt.addEventListener("input", function () {
         let inputVal = searchTxt.value;
@@ -100,7 +102,36 @@ function showNotes() {
             }
         })
 
-
     })
 
 }
+
+let searchBtn = document.getElementById("searchBtn");
+searchBtn.addEventListener("click",function(){
+    let inputVal = searchTxt.value;
+        // console.log(inputVal);
+        let noteCards = document.getElementsByClassName("card-note");
+        let e_count = 0;
+        let noResults = document.getElementById("no-results")
+        Array.from(noteCards).forEach(function (element) {
+
+            let cardTxt = element.getElementsByTagName("p")[0].innerText;
+
+            if (cardTxt.includes(inputVal)) {
+                element.style.display = "block";
+                noResults.style.display = "none";
+                // console.log(cardTxt)
+            }
+            else {
+                element.style.display = "none";
+                e_count += 1;
+                if (e_count == noteCards.length) {
+                   noResults.style.display = "block";
+                }
+                else
+                {
+                    noResults.style.display = "none";
+                }
+            }
+        })
+})
