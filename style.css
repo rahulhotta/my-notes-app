@@ -1,5 +1,13 @@
+#navigation
+{
+    height: 7vh !important;
+}
 
 
+#searchTxt
+{
+    height: 4vh;
+}
 body{
     background-color: rgb(215, 246, 255) !important;
 }
@@ -7,9 +15,15 @@ body{
 {
     /* margin: 3% 2% !important; */
     width: 80vw !important;
-    margin-top: 7vh !important;
+    margin-top: 10vh !important;
     margin: auto;
     
+}
+
+#addBtn
+{
+    width: 100px !important;
+    margin-left:12vw;
 }
 .card-first
 {
