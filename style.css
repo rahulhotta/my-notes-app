@@ -1,0 +1,44 @@
+
+
+body{
+    background-color: rgb(215, 246, 255) !important;
+}
+.notes-input
+{
+    /* margin: 3% 2% !important; */
+    width: 80vw !important;
+    margin-top: 7vh !important;
+    margin: auto;
+    
+}
+.card-first
+{
+    height: 33vh !important;
+    
+}
+.card{
+    background-color: rgb(229, 249, 255)!important;
+}
+#floatingTextarea
+{
+    height: 20vh;
+    background-color: rgb(229, 249, 255)!important;
+}
+
+.note-heading
+{
+    width:80vw;
+    margin:auto;
+    margin-top: 3vh;
+}
+#notes
+{
+    width: 80vw;
+    padding-top: 2vh;
+    margin: auto;
+}
+#no-results
+{
+    font-size: 2rem;
+    display: none;
+}
