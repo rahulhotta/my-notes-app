@@ -17,15 +17,21 @@
 </head>
 
 <body>
-    <nav class="navbar  bg-dark fixed-top" id="navigation">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand text-light">Notes</a>
+          <a class="navbar-brand" href="#">Notes</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
             <form class="d-flex">
-                <input class="form-control me-2" type="search" id="searchTxt" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit" id="searchBtn">Search</button>
+              <input class="form-control me-2" id="searchTxt" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success"  id="searchBtn" type="submit">Search</button>
             </form>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="container-fluid notes-input">
         <h1>welcome to the notes app</h1>
