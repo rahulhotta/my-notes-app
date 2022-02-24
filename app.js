@@ -19,7 +19,37 @@ addBtn.click(function (e) {
     showNotes();
 })
 
+// function for search
+function search()
+{
+    let inputVal = searchTxt.value;
+    // console.log(inputVal);
+    let noteCards = document.getElementsByClassName("card-note");
+    let e_count = 0;
+    let noResults = document.getElementById("no-results")
+    Array.from(noteCards).forEach(function (element) {
 
+        let cardTxt = element.getElementsByTagName("p")[0].innerText;
+
+        if (cardTxt.includes(inputVal)) {
+            element.style.display = "block";
+            noResults.style.display = "none";
+            // console.log(cardTxt)
+        }
+        else {
+            element.style.display = "none";
+            e_count += 1;
+            if (e_count == noteCards.length) {
+               noResults.style.display = "block";
+            }
+            else
+            {
+                noResults.style.display = "none";
+            }
+        }
+    })
+}
+//
 function deleteNote(index) {
     // console.log("you have requested to delete note number ", index + 1);
     let notes = localStorage.getItem("notes");
@@ -73,66 +103,15 @@ function showNotes() {
 
 
     // searching
-//     let searchTxt = document.getElementById("searchTxt");
-//     searchTxt.addEventListener("input", function () {
-//         let inputVal = searchTxt.value;
-//         // console.log(inputVal);
-//         let noteCards = document.getElementsByClassName("card-note");
-//         let e_count = 0;
-//         let noResults = document.getElementById("no-results")
-//         Array.from(noteCards).forEach(function (element) {
+    let searchTxt = document.getElementById("searchTxt");
+    searchTxt.addEventListener("input", search);
 
-//             let cardTxt = element.getElementsByTagName("p")[0].innerText;
 
-//             if (cardTxt.includes(inputVal)) {
-//                 element.style.display = "block";
-//                 noResults.style.display = "none";
-//                 // console.log(cardTxt)
-//             }
-//             else {
-//                 element.style.display = "none";
-//                 e_count += 1;
-//                 if (e_count == noteCards.length) {
-//                    noResults.style.display = "block";
-//                 }
-//                 else
-//                 {
-//                     noResults.style.display = "none";
-//                 }
-//             }
-//         })
 
-//     })
+let searchBtn = document.getElementById("searchBtn");
 
-// }
-
-// let searchBtn = document.getElementById("searchBtn");
-// searchBtn.addEventListener("click",function(){
-//     let inputVal = searchTxt.value;
-//         // console.log(inputVal);
-//         let noteCards = document.getElementsByClassName("card-note");
-//         let e_count = 0;
-//         let noResults = document.getElementById("no-results")
-//         Array.from(noteCards).forEach(function (element) {
-
-//             let cardTxt = element.getElementsByTagName("p")[0].innerText;
-
-//             if (cardTxt.includes(inputVal)) {
-//                 element.style.display = "block";
-//                 noResults.style.display = "none";
-//                 // console.log(cardTxt)
-//             }
-//             else {
-//                 element.style.display = "none";
-//                 e_count += 1;
-//                 if (e_count == noteCards.length) {
-//                    noResults.style.display = "block";
-//                 }
-//                 else
-//                 {
-//                     noResults.style.display = "none";
-//                 }
-//             }
-//         })
-// })
+searchBtn.addEventListener("click",function(event){
+    event.preventDefault();
+    console.log("look at the screen")
+})
 }
